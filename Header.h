@@ -490,7 +490,7 @@ inline void Program::startForm()
 {
 	system("cls");	
 	int ch1;
-	cout << "1.Log in\n2.Reg\n";
+	cout << "1.Log in\n2.Reg\n3.Exit\n";
 	cin >> ch1;
 	 //number of user in a system
 	switch (ch1)
@@ -501,6 +501,8 @@ inline void Program::startForm()
 	case 2:
 		reg();
 		break;
+	case 3:
+		exit(0);
 	default:
 		break;
 	}
@@ -509,6 +511,15 @@ inline void Program::startForm()
 Program::~Program()
 {
 	user_list.clear();
+	for (size_t i = sect_list.getSize()-1; i <=0 ; i++)
+	{
+		for (size_t j = 0; j < sect_list[i].Sub_list.getSize(); j++)
+		{
+			sect_list[i].Sub_list[j].Q_list.clear();
+		}
+		sect_list[i].Sub_list.clear();
+	}
+	sect_list.clear();
 }
 
 inline void Program::resaveData()
