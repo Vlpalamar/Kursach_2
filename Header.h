@@ -151,6 +151,7 @@ inline void Program::menu()
 			{
 		
 			case 1:
+				//если у нас есть кэш, мы его записываем
 				ifs >> itSect >> itSub >> RA >> AA;
 					if (AA == 0)
 					{
@@ -492,7 +493,7 @@ inline void Program::startForm()
 	int ch1;
 	cout << "1.Log in\n2.Reg\n3.Exit\n";
 	cin >> ch1;
-	 //number of user in a system
+	//number of user in a system
 	switch (ch1)
 	{
 	case 1:
