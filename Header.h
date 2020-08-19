@@ -721,7 +721,7 @@ inline void Program::saveSubjectList()
 
 inline void Program::saveQuestion(int sec, int subj)
 {
-	QuestionFileName = sect_list[sec].Sub_list[subj].SubjName + "_Q.txt";
+	QuestionFileName =sect_list[sec].Sub_list[subj].SubjName + "_Q.txt";
 	ofstream ofs(QuestionFileName);
 	if (ofs.is_open())
 	{
@@ -827,8 +827,7 @@ inline void Program::go_test(int itSect,int itSub,int RightQ,int ActAnsw)
 		markInPec = 100 / sect_list[itSect].Sub_list[itSub].Q_list.getSize() * RA;
 		save_stat(itSect, itSub, mark, RA, markInPec);
 		cout << "DONE your mark is: " << mark << "\n";
-		sect_list[itSect].Sub_list[itSub].Q_list.clear();
-		sect_list[itSect].Sub_list.pop_at(itSub);
+	
 	}
 	else
 	{
